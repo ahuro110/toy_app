@@ -1,0 +1,1178 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20200504093516)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200504093516_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200504093516"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-04 09:35:39.477058"], ["updated_at", "2020-05-04 09:35:39.477058"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 10.0.2.2 at 2020-05-04 09:36:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 10ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-05-04 09:38:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+Completed 404 Not Found in 9ms (ActiveRecord: 1.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_up):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:38:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 646ms (Views: 641.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2020-05-04 09:38:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 09:38:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (37.6ms)
+  Rendered users/new.html.erb within layouts/application (41.9ms)
+Completed 200 OK in 88ms (Views: 80.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 09:39:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HZnaSw2mprTPNB8FBRvgK4D/1XWyooEkM6uu+hZYpLaAguuERrSZQ81CwjDPaRwnngasxyFL7aeuR8j9n1JJEA==", "user"=>{"name"=>"a", "email"=>"a@a"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["email", "a@a"], ["created_at", "2020-05-04 09:39:05.321832"], ["updated_at", "2020-05-04 09:39:05.321832"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 12ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2020-05-04 09:39:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 32.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1/edit" for 10.0.2.2 at 2020-05-04 09:39:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.9ms)
+  Rendered users/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:39:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 46.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 09:39:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 09:39:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tt6DzKWH7u1I+OkkBhSad37W10XlYP6tcVJlCpOmEaRVnf7t0AxVQMBrNcXi3Xt3oCGyaQ8/FY9NTn3uZwBc3g==", "user"=>{"name"=>"b", "email"=>"b@b"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "b"], ["email", "b@b"], ["created_at", "2020-05-04 09:39:44.961766"], ["updated_at", "2020-05-04 09:39:44.961766"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 11ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/users/2" for 10.0.2.2 at 2020-05-04 09:39:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:39:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/2" for 10.0.2.2 at 2020-05-04 09:40:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WXe/gBXL3/jzJdhwyBib8XfQDIex5VZdhw/ZrZI3I6jEbI5PXtngD/FTBUUCamf9aSl1NSIMOt4a47+qGz3ODg==", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (2.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 11ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:40:00 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 42ms (Views: 38.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 09:40:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 44ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 09:40:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6YFxh+sWAP8gjY+LrfKlUKS6bVJhLToWCQQ1+hqOyBYKwgymnp27UqgeU2pJO0RQek0Ifoty0TQ1GC0e7iiFbA==", "user"=>{"name"=>"aa", "email"=>"aa@ss"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (4.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "aa"], ["email", "aa@ss"], ["created_at", "2020-05-04 09:40:40.824915"], ["updated_at", "2020-05-04 09:40:40.824915"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2020-05-04 09:40:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 10.0.2.2 at 2020-05-04 09:41:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 38.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:41:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 09:41:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.8ms)
+  Rendered users/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 09:41:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WayoFHp88Hh6E19JZXMl990A+N9wQwQDTUoYlLx83pm679U1D/dL1fKAg6iBusT3A/ed85oc7yFxVgBwSNqT4w==", "user"=>{"name"=>"a", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "a"], ["email", ""], ["created_at", "2020-05-04 09:41:43.039476"], ["updated_at", "2020-05-04 09:41:43.039476"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 11ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/users/4" for 10.0.2.2 at 2020-05-04 09:41:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 42ms (Views: 36.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:41:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 38.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 09:41:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (1.6ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 45ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 09:42:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yvaQf1//BWJvHIBi+JtgrzQ4jmflbyBV5J9aV2cQhLcpte1eKnS+z+ePXIMcUoGv6s/rSw8wy3fYg0Kzk7bJzQ==", "user"=>{"name"=>"", "email"=>"@example.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[36mUser Create (2.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", ""], ["email", "@example.com"], ["created_at", "2020-05-04 09:42:01.373757"], ["updated_at", "2020-05-04 09:42:01.373757"]]
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/5" for 10.0.2.2 at 2020-05-04 09:42:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 43ms (Views: 37.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:42:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/5" for 10.0.2.2 at 2020-05-04 09:42:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7jKAMUX0zpQyQwBXOwUqCJR/2ndJ2UKTRFweFaBDXqpzKbH+DubxYzA13WLxd9YEioajxdowLhDZsHgSKUmzDA==", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (2.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:42:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-05-04 09:49:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 58ms (Views: 48.4ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/users/4" for 10.0.2.2 at 2020-05-04 09:49:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"2HqrmCJQgZ9vXXdovHm19Fu7yRQPFpMhpDVsq4YTHmNFYZpXaUK+aG0rql12C0n4RUKwppz//6I52QqsDxnzxQ==", "id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+  [1m[36mUser Destroy (2.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/users_controller.rb:57
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:57
+Redirected to http://localhost:3000/users
+Completed 302 Found in 10ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:49:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 39ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 10.0.2.2 at 2020-05-04 09:49:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 45ms (Views: 40.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateMicroposts (20200504100642)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20200504100642_create_microposts.rb:3
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "microposts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200504100642_create_microposts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200504100642"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:08:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (10.5ms)
+  Rendered microposts/new.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 443ms (Views: 427.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:09:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VIawy/gjfDDeODLzdJA0QkRux/cyjtrhQuXS6P7rV27JnYEEszFDx9xO78a+4shOWpe+RaFntmLfCbTvd+G6yA==", "micropost"=>{"content"=>"aaa", "user_id"=>"2"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.7ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "aaa"], ["user_id", 2], ["created_at", "2020-05-04 10:09:02.380002"], ["updated_at", "2020-05-04 10:09:02.380002"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/1
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/microposts/1" for 10.0.2.2 at 2020-05-04 10:09:02 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 40.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:09:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:09:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.3ms)
+  Rendered microposts/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 49ms (Views: 44.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:09:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4oII0QZ5XT1xmNsrIo0BCckIqWVr6GhKA2id+w15NuOORxaRy18wOaFimNYwyz0f8jD4XibZMKHg2MkH7bUgSw==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.8ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", ""], ["created_at", "2020-05-04 10:09:26.682065"], ["updated_at", "2020-05-04 10:09:26.682065"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/2
+Completed 302 Found in 10ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/microposts/2" for 10.0.2.2 at 2020-05-04 10:09:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:09:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:09:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (1.8ms)
+  Rendered microposts/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:09:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/llfakLXe14AoKUy6OJKyy0I8MxXF9BsuCmG1TA1S42SnEEqj/EWWtBa5s/6pHbdFjCh9xomiIdbmdIp0PldJQ==", "micropost"=>{"content"=>"Ruby（ルビー）は、まつもとゆきひろ（通称: Matz）により開発されたオブジェクト指向スクリプト言語（スクリプト言語とはプログラミング言語の一分類）。\r\n\r\n日本で開発されたプログラミング言語としては初めて国際電気標準会議（IEC）で国際規格に認証された事例となった[3]。", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Ruby（ルビー）は、まつもとゆきひろ（通称: Matz）により開発されたオブジェクト指向スクリプト言語（スクリプト言語とはプログラミング言語の一分類）。\r\n\r\n日本で開発されたプログラミング言語としては初めて国際電気標準会議（IEC）で国際規格に認証された事例となった[3]。"], ["created_at", "2020-05-04 10:09:51.016724"], ["updated_at", "2020-05-04 10:09:51.016724"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/3
+Completed 302 Found in 10ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/microposts/3" for 10.0.2.2 at 2020-05-04 10:09:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:09:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 48ms (Views: 43.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/microposts/3" for 10.0.2.2 at 2020-05-04 10:10:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/qk9itl8owu7FXhV6b8Jb0+X57+sXarHrPnvdnGhK4ZjsgxFkm6c/LljpWAjzfVjUW6eDT+0xkQxFYlx+KvGIA==", "id"=>"3"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (2.0ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 11ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:10:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/microposts/2" for 10.0.2.2 at 2020-05-04 10:10:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IfSzvgNv39pQorbLYoJhVu5sXl69ohXBgJ86GX3MMnu874JxSH3gLVLUa/6o8J1a8JUn7C5LeUIdc1we9Mbf3Q==", "id"=>"2"}
+  [1m[36mMicropost Load (0.7ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (2.2ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:10:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:11:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (1.9ms)
+  Rendered microposts/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:12:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kziOrVK+ZcXKhcjGu/Bo/LEhREV5z/qKSu1vdpP8wXD//ZDtn5gIwRp/izuptlTqihkVfjT+omGpXTuKczDX2A==", "micropost"=>{"content"=>"Ruby（ルビー）は、まつもとゆきひろ（通称: Matz）により開発されたオブジェクト指向スクリプト言語（スクリプト言語とはプログラミング言語の一分類）。\r\n\r\n日本で開発されたプログラミング言語としては初めて国際電気標準会議（IEC）で国際規格に認証された事例となった[3]。", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.9ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "Ruby（ルビー）は、まつもとゆきひろ（通称: Matz）により開発されたオブジェクト指向スクリプト言語（スクリプト言語とはプログラミング言語の一分類）。\r\n\r\n日本で開発されたプログラミング言語としては初めて国際電気標準会議（IEC）で国際規格に認証された事例となった[3]。"], ["created_at", "2020-05-04 10:12:12.082379"], ["updated_at", "2020-05-04 10:12:12.082379"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/4
+Completed 302 Found in 11ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/microposts/4" for 10.0.2.2 at 2020-05-04 10:12:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMicropost Load (0.9ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-05-04 10:12:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:15
+  Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 52ms (Views: 44.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "//microposts/new)" for 10.0.2.2 at 2020-05-04 10:12:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"new)"}
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Micropost with 'id'=new)):
+  
+app/controllers/microposts_controller.rb:67:in `set_micropost'
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:12:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (1.7ms)
+  Rendered microposts/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 52ms (Views: 48.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:17:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5DK/BKTlRDvaFt0CEoNgI+gIrPQkUV6K6XWtMTkM3pZ5KY7L7/d7zNhgADfY8Zwv9vHVRre4Mgl0mcs2sAYzMA==", "micropost"=>{"content"=>"/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (3.1ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y"], ["created_at", "2020-05-04 10:17:36.140604"], ["updated_at", "2020-05-04 10:17:36.140604"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/5
+Completed 302 Found in 14ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/microposts/5" for 10.0.2.2 at 2020-05-04 10:17:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 64.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:18:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:18:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.1ms)
+  Rendered microposts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 48.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:18:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qwXwXPtx5dXxRUe6M9PhOhdFSt32LovZYK5SWtz1COXHwO4cNleI0SG/BEchld0sLH0b5rsf0zKDHgamPDkeTQ==", "micropost"=>{"content"=>"/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.9ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)/microposts/new)y"], ["created_at", "2020-05-04 10:18:18.792747"], ["updated_at", "2020-05-04 10:18:18.792747"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/6
+Completed 302 Found in 12ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/microposts/6" for 10.0.2.2 at 2020-05-04 10:18:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:18:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:19:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (1.2ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 269ms (Views: 255.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:19:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (11.9ms)
+  Rendered microposts/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 59ms (Views: 55.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:19:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AnIvlNj8FRTKxjDHTbqm8QPEnsYjSzo169mdXD3Z3rdutzHUFdp4EBo8czpf/JrnOPzP/W56Yt4Iacmg3RXIHw==", "micropost"=>{"content"=>"class Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nend", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.2ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["content", "class Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nend"], ["created_at", "2020-05-04 10:19:36.682472"], ["updated_at", "2020-05-04 10:19:36.682472"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/7
+Completed 302 Found in 10ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/microposts/7" for 10.0.2.2 at 2020-05-04 10:19:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 48ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:19:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 42.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:19:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (1.9ms)
+  Rendered microposts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:19:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eTE1em8BDkh24z/jtUiabQacdztcdp9OqQizUuqOBxkV9Cs6oidjTKYZfB6nDqZ7PaQmABFHx6VKuOeuCkIRsQ==", "micropost"=>{"content"=>"class Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nendclass Micropost < ApplicationRecord\r\n  validates :content, length: { maximum: 140 }\r\nend", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.3ms)
+  Rendered microposts/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.9ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (1.0ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:25:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 250ms (Views: 236.6ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/microposts/6" for 10.0.2.2 at 2020-05-04 10:25:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+C5tbtqCqd4y1VHn/WIaupNea2xIBSnHojXE2yCauw1lNVyhkZCWKTCjjNI3EOa2jacS3tvsRUQ/2aLcqZBWqw==", "id"=>"6"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (3.9ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 15ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:25:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/microposts/5" for 10.0.2.2 at 2020-05-04 10:25:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ikIjPYMytzw5oV719ZeLZoVQAgAI6L4ETHAmXdRso9IXWRLyyCCIyzvXg8A/5Xdqm6l7spsB0ofRnEBaXWZOdA==", "id"=>"5"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (4.1ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 11ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:25:54 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/microposts/4" for 10.0.2.2 at 2020-05-04 10:25:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xuRtkh02b3UcVni1L5tZ26peepgMsYx41e/XVYkbu8Vb/1xdViRQgh4gpYDl6aXXtKcDKp9Y4PtIA7FSABFWYw==", "id"=>"4"}
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (2.1ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 10ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:25:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/microposts/7" for 10.0.2.2 at 2020-05-04 10:26:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0s9cL4+5aiT3AgUTL971wXhyllcyrCrXUvDbrZoHpKlP1G3gxKtV0/V02CblrAnNZovv5aFFRlTPHL2qEw1JDw==", "id"=>"7"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[36mMicropost Destroy (2.2ms)[0m  [1m[31mDELETE FROM "microposts" WHERE "microposts"."id" = ?[0m  [["id", 7]]
+  ↳ app/controllers/microposts_controller.rb:57
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:57
+Redirected to http://localhost:3000/microposts
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:26:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 44ms (Views: 39.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:26:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (16.4ms)
+  Rendered microposts/new.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 63ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:26:09 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9yRnVjuMu8l/lSxASenhoemdXH95pofYL/Xh46AVz/Wb4XkW9qrWza9vb71br9230qUNRDSX3zPMRbUfQNnZXQ==", "micropost"=>{"content"=>"a", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (1.8ms)
+  Rendered microposts/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 59ms (Views: 43.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:26:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eRLD9LQdEhsUYpHcfJsFocqK7yHepkHimP/b+8ATwrXkCfI7/w8t7BYUTOm26fmt1HOWk01PLWEFE738SRkvEw==", "micropost"=>{"content"=>"a", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[36mMicropost Create (2.6ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "a"], ["user_id", 1], ["created_at", "2020-05-04 10:26:16.582442"], ["updated_at", "2020-05-04 10:26:16.582442"]]
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+Redirected to http://localhost:3000/microposts/8
+Completed 302 Found in 20ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/microposts/8" for 10.0.2.2 at 2020-05-04 10:26:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 64ms (Views: 58.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:26:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mMicropost Load (0.8ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+Started GET "/microposts/8" for 10.0.2.2 at 2020-05-04 10:28:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 314ms (Views: 293.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/microposts/8" for 10.0.2.2 at 2020-05-04 10:28:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMicropost Load (0.6ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/microposts_controller.rb:67
+  Rendering microposts/show.html.erb within layouts/application
+  Rendered microposts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 49ms (Views: 42.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/microposts" for 10.0.2.2 at 2020-05-04 10:28:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#index as HTML
+  Rendering microposts/index.html.erb within layouts/application
+  [1m[36mMicropost Load (0.5ms)[0m  [1m[34mSELECT "microposts".* FROM "microposts"[0m
+  ↳ app/views/microposts/index.html.erb:15
+  Rendered microposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2020-05-04 10:28:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 34.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/1" for 10.0.2.2 at 2020-05-04 10:32:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms)
+
+
+  
+SyntaxError (/home/vagrant/work/toy_app/app/views/users/show.html.erb:16: syntax error, unexpected ')', expecting '='
+...user.microposts,first.content );@output_buffer.safe_append='
+...                              ^
+/home/vagrant/work/toy_app/app/views/users/show.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/home/vagrant/work/toy_app/app/views/users/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/users/show.html.erb:16: syntax error, unexpected ')', expecting '='
+app/views/users/show.html.erb:23: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/users/show.html.erb:25: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/users/1" for 10.0.2.2 at 2020-05-04 10:32:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE "microposts"."user_id" = ? ORDER BY "microposts"."id" ASC LIMIT ?[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:16
+  Rendered users/show.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 64ms (Views: 58.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/microposts/new" for 10.0.2.2 at 2020-05-04 10:35:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by MicropostsController#new as HTML
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (11.7ms)
+  Rendered microposts/new.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 291ms (Views: 273.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/microposts" for 10.0.2.2 at 2020-05-04 10:35:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V8EJxHuFG31gpH5QpyBFZXUhdz41syOux32Pm9XDVkHK2jgLMJckimLSo2VtUrlpa9gOjKZaTy1akemcXMm75w==", "micropost"=>{"content"=>"", "user_id"=>""}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/microposts_controller.rb:30
+  Rendering microposts/new.html.erb within layouts/application
+  Rendered microposts/_form.html.erb (2.0ms)
+  Rendered microposts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_up" for 10.0.2.2 at 2020-05-04 10:37:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.7/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_up"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:67
+Completed 404 Not Found in 14ms (ActiveRecord: 2.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=sign_up):
+  
+app/controllers/users_controller.rb:67:in `set_user'
+Started GET "/users/new" for 10.0.2.2 at 2020-05-04 10:37:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (11.3ms)
+  Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 276ms (Views: 268.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.0.2.2 at 2020-05-04 10:37:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"guFTY3sUfuvEU94B+vD8XMGNCt5uv2uabIHPQSyVZEQf+mKsMAZBHMYlAzQwggBQ33RzbP1WBxnxbalGpZ+J4g==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:30
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (2.4ms)
+  Rendered users/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
